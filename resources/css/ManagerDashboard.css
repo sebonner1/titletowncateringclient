@@ -1,0 +1,60 @@
+.navbar{
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .navbar li{
+    display: inline;
+    padding:20px;
+  }
+
+.upcoming{
+    background-color: white;
+    top: 0;
+    width: auto;
+    height: auto;
+    text-align: left;
+    padding: 16px;
+}
+
+html{
+    background-color: white;
+}
+
+.navbar{
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar li{
+    display: inline;
+    padding:20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+a.red {
+    color: #990000;
+}
+.banner{
+    background-color: #ffffff;
+    color: #990000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif,fantasy;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.reportdropdown
+{
+    text-align: center;
+}

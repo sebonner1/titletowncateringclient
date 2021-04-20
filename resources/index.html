@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Town Catering Company</title>
+    <title>Title Town Catering</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src= "./scripts/cartfunc.js""></script>
+    <!--Banner Section-->
+    <div class="banner">
+        <h1 style = "font-size: 50px;">Title Town Catering</h1>
+    </div>
+    <div class = "menubanner">
+        <h1 style = "font-size: 90px;">Menu</h1>
+    </div>
+    <div class = "emptybanner">
+        <h1>   </h1>
+    </div>
+    </div>
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header"></div>
+        <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./Login.html">Login</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <!--Shopping Cart starts here-->
+    <div class = "shoppinglist">
+    <h2><u>In Your Cart___________</u></h2>
+    <p>
+        <!--Note to self: try not to hard code here. The manager will add things to the list-->
+        <script type = "text/javascript" src = "./scripts/cartfunc.js">
+        getCart();
+        </script>
+        <div id="cartitems"></div>
+        <ul>
+            <button id="checkoutbutton"><a href = "./Calendar.html">Checkout</a></button>
+        </ul>
+    </p>
+    </div>
+
+        <!--Photos begin here-->
+        <div class="menu-display">
+            <div>
+                <button onclick ="chickenparmfunction()" id ="chickenParmbutton"><img id = "chickenParmImage" src = "./images/chickenparm2.jpeg" alt=""></button>
+                <button onclick = "chocchipfunction()" id ="chocochipbutton"><img id = "chocochipImage" src = "./images/chocchip2.jpeg" alt=""></button>
+            </div>
+            <div>
+                <button onclick ="vegburgfunction()" id ="vegburgbutton"><img id = "vegburgImage" src = "./images/veggieburger2.jpeg" alt=""></button>
+                <button onclick ="chicksaladfunction()" id ="chickensandbutton"><img id = "chickensandImage" src = "./images/chickensalad2.jpeg" alt=""></button>
+            </div>
+            <div>
+                <button onclick ="turkfunction()" id ="turkbutton"><img id = "turkImage" src = "./images/turkeyclub2.jpeg" alt=""></button>
+                <button onclick ="housesaladfunction()" id ="saladbutton"><img id = "saladImage" src = "./images/housesalad2.jpeg" alt=""></button>
+            </div>
+        </div>
+
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/receipt.js"></script>
+    
+    <!--Latest bootstrap jQuery-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</body>
+</html>

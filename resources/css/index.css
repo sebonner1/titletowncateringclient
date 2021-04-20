@@ -1,0 +1,141 @@
+.navbar{
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: "Montserrat";
+}
+
+.navbar li{
+    display: inline;
+    padding:5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover /*looks crazy but only way could get Home and Login buttons same as background*/
+{
+    background-color: gray;
+}
+
+a.red {
+    color: #990000;
+}
+
+.banner{
+    background-color: #ffffff;
+    color: #990000;
+    font-family: andale mono, monospace;
+    font-size: 1000px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+    padding: 30px 0;
+}
+.menubanner{
+    background-color:lightgrey;
+    color:black;
+    font-family: brush script mt, cursive;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px 0;
+}
+#menuitems{
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 25%;
+    font-family: "Montserrat";
+}
+#chickenParmImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#chickenParmbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+#chocochipImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#chocochipbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+#vegburgImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#vegburgbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+#chickensandImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#chickensandbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+#turkImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#turkbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+#saladImage{
+    border-radius: 50%;
+    height:200px;
+    width: 200px;
+}
+#saladbutton{
+    border-radius: 50%;
+    height:210px;
+    text-align: center;
+}
+.shoppinglist {
+    float: right;
+    width: 45%;
+    background-color: grey;
+    text-align: left;
+    padding: 10px;
+    font-family: "Montserrat";
+    height: auto;
+}
+
+
+.menubulletpoints {
+    list-style-type: circle;
+    text-align: left;
+    font-family: "Montserrat";
+}
+
+#checkoutbutton{
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: black;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
