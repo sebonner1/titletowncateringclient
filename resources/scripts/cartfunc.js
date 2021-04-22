@@ -210,3 +210,23 @@ function housesaladfunction(){
         getCart();
     })
 }
+
+function getDescription(){
+    const allCartAPIURL = "https://localhost:5000/api/cartAPI";
+
+    fetch(allCartAPIURL).then(function(response){
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartItem)=>{
+            html += "<li id = item" +CartItem.cartid+" pricea = " + CartItem.price + "",
+            html += "id = item" + CartItem.cartid+ " quantitya = "+ CartItem.quantity+ ">" +CartItem.quantity,
+            html += CartItem.itemName,
+            html += "$" + CartItem.price
+        })
+        html += "</ul>";
+        document.getElementById("cartitems").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}

@@ -7,8 +7,7 @@
     <title>Manager Dashboard</title>
     <link rel="stylesheet" href="../resources/css/ManagerDashboard.css">
 </head>
-<body>
-  <script src="./scripts/displayAll.js"></script>
+<body onload = "getEvents()">
   <div class="banner">
     <h1>Welcome to the Manager Dashboard</h1>
   </div>
@@ -25,9 +24,9 @@
 </nav>
 <div class="reportdropdown">
 <h2>Choose a report to view:</h2>
-<select name="reports" id="reports">
+<select id = "selectmenu">
   <option value = "">Click to view reports</option>
-  <option id = "viewallreports" value="Viewall">View all</option>
+  <option value="Viewall">View all</option>
   <option value="Orderspermonth">Orders per month</option>
   <option value="Mostpopularitems">Most popular items</option>
   <option value="Mostprofitableitems">Most profitable items</option>
@@ -42,16 +41,15 @@
 <div id="carttotals"></div>
 <div id="cartitems"></div>
 <h2>Upcoming events:</h2>
-<div class="upcoming">
-  <script type = "text/javascript" src = "./scripts/eventmanager.js">
-    getEvents();
-  </script>
+<div class="upcoming" id="cateringevents">
+  <script type = "text/javascript" src = "./scripts/eventmanager.js"></script>
 <!-- <div>
   <script>
   getAllReports();
   </script>
 </div> -->
 </div>
+<script src="./scripts/displayAll.js"></script>
 <!-- <script src="./scripts/displayAll.js"></script> put scripts at the bottom -->
 </body>
 </html>
