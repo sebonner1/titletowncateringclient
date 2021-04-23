@@ -162,6 +162,11 @@ function getAllReports()
     })
 }
 
+function getMostPopularItem()
+{
+
+}
+
 // add to the if statement here
 
 // TTC TEAM - make sure my syntax is right here with the if and else if, thank you!!! 

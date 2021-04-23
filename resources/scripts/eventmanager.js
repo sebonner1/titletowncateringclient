@@ -1,7 +1,7 @@
 console.log("javascript loaded");
 function getEvents(){
     const allEventsAPIURL = "https://localhost:5000/api/CateringEvent";
-
+    console.log("made it to the js");
     fetch(allEventsAPIURL).then(function(response){
         return response.json();
     }).then(function(json){

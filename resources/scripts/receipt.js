@@ -57,6 +57,7 @@ console.log("javascript loaded");
 function getCartItems(){
     const allCartAPIURL = "https://localhost:5000/api/cartAPI";
 
+    var totalPrice = 0.0;
     fetch(allCartAPIURL).then(function(response){
         return response.json();
     }).then(function(json){
@@ -65,9 +66,13 @@ function getCartItems(){
             html += "<tbody><tr>",
             html += "<td>"+CartItem.itemName+"</td>",
             html += '<td class="alignright">'+'$'+CartItem.price+"</td>",
+            totalPrice += CartItem.price,
             html += "</tr>",
             html += "</tbody></table>";
         })
+        
+        html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
+        html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
         html += "</ul>";
         document.getElementById("cartitems").innerHTML = html;
     }).catch(function(error){
