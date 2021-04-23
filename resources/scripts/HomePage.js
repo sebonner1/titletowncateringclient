@@ -16,6 +16,7 @@ function pushCartData(){
         //     quantity: 1
         // }
         // console.log(itemPost);
+        console.log("INSERT");
         fetch(postCartAPIURL, {
             method: "POST",
             headers: {
