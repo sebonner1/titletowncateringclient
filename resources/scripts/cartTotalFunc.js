@@ -1,4 +1,4 @@
-function postCart(OrderID)
+function postCart()
 {
     console.log("made it to the post cart");
     const allCartTotalAPIURL = "https://localhost:5000/api/cartTotal";
@@ -10,7 +10,7 @@ function postCart(OrderID)
             "Accept": 'application/json',
             "Content-Type": 'application/json',
         },
-        // body: JSON.stringify()
+        body: JSON.stringify()
         // console.log("made oit past the fetch"),
     }).then((response)=>{
         console.log(response);
