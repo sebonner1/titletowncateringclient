@@ -8,154 +8,22 @@ function getAllReports()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.orderID, 
+            html += "<li>" +CartTotal.OrderID, 
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.totalprice,
+            html += "$" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.qckparm,
+            html += CartTotal.price,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.qccc,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.qvegb,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.qcss,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.qturk,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.qhouse,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.pckparm,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.pccc,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.pvegb,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.pcss,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.pturk,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.phouse,
+            html += CartTotal.quantity,
             "</li>"
         })
         html += "</ul>";
-        document.getElementById("carttotals").innerHTML = html;
-    }).catch(function(error){
-        console.log(error);
-    })
-
-    // trying to get tables lol
-    fetch(allReportsAPIURL).then(function(response){
-        console.log(response);
-        return response.json();
-    }).then(function(json){
-        let html = "<table style=\"width:100%; border: 1px solid black\";>";
-        json.forEach((CartTotal)=>{
-            html+="<tr>";
-            html+="<th>Order ID</th>";
-            html+="<th>Total Price</th>";
-            html+="<th>Chicken Parm</th>";
-            html+="<th>Chocolate Chip Cookie</th>";
-            html+="<th>Veggie Burger</th>";
-            html+="<th>Chicken Salad Sandwich</th>";
-            html+="<th>Turkey Melt</th>";
-            html+="<th>House Salad</th>";
-            html+="</tr>";
-            html+="<tr>";
-            html += "<td><li>" +CartTotal.orderID+"</td>", 
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += "$" + CartTotal.totalprice+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qckparm+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qccc+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qvegb+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qcss+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qturk+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.qhouse+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.pckparm+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.pccc+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.pvegb+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.pcss+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.pturk+"</td>",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "<td>",
-            html += CartTotal.phouse+"</td>",
-            "</li></tr>"
-        })
-        html += "</table>";
         document.getElementById("carttotals").innerHTML = html;
     }).catch(function(error){
         console.log(error);
@@ -164,7 +32,98 @@ function getAllReports()
 
 function getMostPopularItem()
 {
+    const popItemReportAPIURL = "https://localhost:5000/api/mostPopItemsReport";
 
+    fetch(popItemReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" +CartTotal.OrderID, 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "$" + CartTotal.itemName,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.price,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.quantity,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
+
+function getLeastPopularItem()
+{
+    const leastPopItemReportAPIURL = "https://localhost:5000/api/leastPopItemsReport";
+
+    fetch(leastPopItemReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" +CartTotal.OrderID, 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "$" + CartTotal.itemName,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.price,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.quantity,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
+
+function getMostProfitItem()
+{
+    const mostProfitItemReportAPIURL = "https://localhost:5000/api/MostProfitItemsReport";
+
+    fetch(mostProfitItemReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" +CartTotal.OrderID, 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "$" + CartTotal.itemName,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.price,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.quantity,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
 }
 
 // add to the if statement here
@@ -185,11 +144,11 @@ selectmenu.addEventListener("input", (e) => {
         }
         else if(e.target.value = "Mostpopularitems")
         {
-            // insert the method here
+            getMostPopularItem();
         }
         else if(e.target.value = "Mostprofitableitems")
         {
-            // insert the method here
+            getMostProfitItem();
         }
         else if(e.target.value = "Percentpickupvsdelivered")
         {
@@ -201,7 +160,7 @@ selectmenu.addEventListener("input", (e) => {
         }
         else if(e.target.value = "Leastpopularitem")
         {
-            // insert the method here
+            getLeastPopularItem();
         }
     }
 })
