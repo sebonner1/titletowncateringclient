@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>
+<body onload = getList()>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src= "./scripts/cartfunc.js"></script>
-    <script src="./scripts/index.js"></script>
+    <!--<script src="./scripts/index.js"></script>-->
     <script src="./scripts/receipt.js"></script>
-    <script src="./scripts/cartTotalFunc.js"></script>
+    <!--<script src="./scripts/cartTotalFunc.js"></script>-->
+    <script type="text/javascript" src = "./scripts/getList.js"></script>
     <!--Banner Section-->
     <div class="banner">
         <h1 style = "font-size: 50px;">Title Town Catering</h1>
@@ -42,17 +43,14 @@
 
     <!--Shopping Cart starts here-->
     <div class = "shoppinglist">
-    <h2><u>In Your Cart___________</u></h2>
+    <h2><u>_________In Your Cart_________</u></h2>
     <p>
         <!--Note to self: try not to hard code here. The manager will add things to the list-->
-        <script type = "text/javascript" src = "./scripts/cartfunc.js">
-
-        getCart();
-        </script>
         <div id="cartitems"></div>
+        <div id="cart"></div>
         <ul>
             <button onclick="postCart()" id="checkoutbutton">Checkout</button>
-                <!-- href = "./Calendar.html"> -->
+                href = "./Calendar.html">
         </ul>
     </p>
     </div>
@@ -60,16 +58,16 @@
         <!--Photos begin here-->
         <div class="menu-display">
             <div>
-                <button onclick ="chickenparmfunction()" id ="chickenParmbutton"><img id = "chickenParmImage" src = "./images/chickenparm2.jpeg" alt=""></button>
-                <button onclick = "chocchipfunction()" id ="chocochipbutton"><img id = "chocochipImage" src = "./images/chocchip2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('1')" id ="chickenParmbutton"><img id = "chickenParmImage" src = "./images/chickenparm2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('2')" id ="chocochipbutton"><img id = "chocochipImage" src = "./images/chocchip2.jpeg" alt=""></button>
             </div>
             <div>
-                <button onclick ="vegburgfunction()" id ="vegburgbutton"><img id = "vegburgImage" src = "./images/veggieburger2.jpeg" alt=""></button>
-                <button onclick ="chicksaladfunction()" id ="chickensandbutton"><img id = "chickensandImage" src = "./images/chickensalad2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('3')" id ="vegburgbutton"><img id = "vegburgImage" src = "./images/veggieburger2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('4')" id ="chickensandbutton"><img id = "chickensandImage" src = "./images/chickensalad2.jpeg" alt=""></button>
             </div>
             <div>
-                <button onclick ="turkfunction()" id ="turkbutton"><img id = "turkImage" src = "./images/turkeyclub2.jpeg" alt=""></button>
-                <button onclick ="housesaladfunction()" id ="saladbutton"><img id = "saladImage" src = "./images/housesalad2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('5')" id ="turkbutton"><img id = "turkImage" src = "./images/turkeyclub2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('6')" id ="saladbutton"><img id = "saladImage" src = "./images/housesalad2.jpeg" alt=""></button>
             </div>
         </div>
 
@@ -79,5 +77,6 @@
     
     <!--Latest bootstrap jQuery-->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script type = "text/javascript" src = "./scripts/getList.js"></script>
 </body>
 </html>
