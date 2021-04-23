@@ -126,6 +126,38 @@ function getMostProfitItem()
     })
 }
 
+function getPickupMethodItem()
+{
+    const pickupMethodReportAPIURL = "https://localhost:5000/api/pickupMethodReport";
+
+    fetch(pickupMethodReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" +CartTotal.OrderID, 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "$" + CartTotal.itemName,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.price,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.quantity,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
+
 // add to the if statement here
 
 // TTC TEAM - make sure my syntax is right here with the if and else if, thank you!!! 
