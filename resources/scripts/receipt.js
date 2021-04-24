@@ -54,7 +54,10 @@
 // });
 
 console.log("javascript loaded");
-function getCartItems(){
+function getCartItemsReceipt(){
+
+    // front end or storage here
+
     const allCartAPIURL = "https://localhost:5000/api/cartAPI";
 
     var totalPrice = 0.0;
@@ -62,11 +65,11 @@ function getCartItems(){
         return response.json();
     }).then(function(json){
         let html = "<ul>";
-        json.forEach((CartItem)=>{
+        json.forEach((item)=>{
             html += "<tbody><tr>",
-            html += "<td>"+CartItem.itemName+"</td>",
-            html += '<td class="alignright">'+'$'+CartItem.price+"</td>",
-            totalPrice += CartItem.price,
+            html += "<td>"+item.itemName+"</td>",
+            html += '<td class="alignright">'+'$'+item.price+"</td>",
+            totalPrice += (item.quantity * item.price),
             html += "</tr>",
             html += "</tbody></table>";
         })

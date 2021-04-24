@@ -101,38 +101,30 @@ var methodSelection = document.getElementById("method");
 function pushCartData() 
 
 { 
+console.log("push data");
 
 const postCateringEventAPIURL = "https://localhost:5000/api/CateringEvent"; 
-
 cateringEvent = cateringEvent.toString(); 
-
 var temp; 
-
 if(methodSelection = "Pickup") 
-
 { 
-
-temp= 1; 
-
+    temp= 1; 
 } 
 
 else{ 
-
-temp= 2; 
-
+    temp= 2; 
 } 
 
 var cateringEvent = { 
+    orderPlaced: Date.Now(), 
 
-orderPlaced: Date.Now(), 
+    orderDate: selectedDate + timeSelection, 
 
-orderDate: selectedDate + timeSelection, 
+    fulfilledStatus: "FALSE", 
 
-fulfilledStatus: "FALSE", 
+    orderEventMethod: temp, 
 
-orderEventMethod: temp, 
-
-orderEventDescription: addressInput +","+ getDescription() // is this how I would do this? 
+    orderEventDescription: addressInput +","+ getDescription() // is this how I would do this? 
 
 } 
 
@@ -160,15 +152,13 @@ console.log(response);
 
 // submit button 
 
-const submitbutton = document.getElementById("submitbutton"); 
+// const submitbutton = document.getElementById("submitbutton"); 
 
-submitbutton.addEventListener("click", (e) => { 
+// submitbutton.addEventListener("click", (e) => { 
 
-alert("You are being taken to the receipt for your transaction."); 
-
-window.location.href= "../resources/Receipt.html"; 
-
-}) 
+// alert("You are being taken to the receipt for your transaction."); 
+// window.location.href= "../resources/Receipt.html"; 
+// }) 
 //   window.onload = function() {
 //     // var selectedDate = calendar.getValue();
 //     // console.log(selectedDate);

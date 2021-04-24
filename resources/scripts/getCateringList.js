@@ -11,17 +11,16 @@ if(Date.Now > orderDateSelected)
 else{ 
     orderFulfilled= 'FALSE'; 
 } 
-
  
 var calendarofevents = []; 
 var events = [ 
 { 
-'OrderID': orderID, 
-'orderPlaced': Date.Now, 
-'orderDate': orderDateSelected, 
-'fulfilledStatus': orderFulfilled, 
-'orderEventMethod': methodSelection, 
-'orderDescription': addressSelected 
+    'OrderID': orderID, 
+    'orderPlaced': Date.Now, 
+    'orderDate': orderDateSelected, 
+    'fulfilledStatus': orderFulfilled, 
+    'orderEventMethod': methodSelection, 
+    'orderDescription': addressSelected 
 } 
 ] 
 
@@ -97,6 +96,7 @@ function populateEventList(){
 document.getElementById("calendarofevents").innerHTML= html; 
 } 
 
+// get from the backend
 
 function getEventList() 
 { 
@@ -123,9 +123,6 @@ function getEventList()
 
 // console.log(finalCartItems); 
 
- 
- 
-
 } 
 
  
@@ -135,13 +132,14 @@ function pushEventItems()
 { 
 getEventList(); 
 const postCateringEventAPIURL = "https://localhost:5000/api/CateringEvent"; 
+console.log(finalEventItems);
 fetch(postCateringEventAPIURL, { 
 method: "PUT", 
 headers: { 
     "Accept": 'application/json', 
     "Content-Type": 'application/json' 
 }, 
-body: JSON.stringify(finalCartItems) 
+body: JSON.stringify(finalEventItems) 
 }).then((response)=>{ 
 console.log(response); 
 }) 
