@@ -137,6 +137,7 @@ function pushCartItems()
         body: JSON.stringify(finalCartItems)
     }).then((response)=>{
         console.log(response);
+        window.location.href = "./Calendar.html";
     })
 }
 

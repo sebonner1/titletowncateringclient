@@ -8,15 +8,15 @@ function getAllReports()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.OrderID, 
+            html += "<li>" +CartTotal.orderID, 
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.itemName,
+            html += CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.price,
+            html += "$"+CartTotal.price,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
