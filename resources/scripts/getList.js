@@ -37,6 +37,7 @@ var items = [
         'count': 1
     }
 ]
+// Items above
 
 function handleOnLoad(){
     populateCart();
@@ -91,3 +92,11 @@ function populateCart(){
     });
     document.getElementById("cart").innerHTML= html;
 }
+
+/*
+const checkout = document.getElementById("checkoutbutton");
+checkout.addEventListener("click", (e) => {
+alert("You have successfully logged in.");
+window.location.href= "../resources/Calendar.html";
+});
+*/
