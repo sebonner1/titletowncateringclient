@@ -37,6 +37,10 @@ var items = [
         'count': 1
     }
 ]
+
+var finalCartItems = [];
+
+
 // Items above
 
 function handleOnLoad(){
@@ -89,8 +93,51 @@ function populateCart(){
       html+="<td>"+(item.count * item.price) +"</td>";
       html+="<td><button onclick=\"handleAddOne("+item.id+")\">+</button></td>";
       html+="<td><button onclick=\"handleSubOne("+item.id+")\">-</button></td></tbody>";
+    //   html +="</table>";
     });
     document.getElementById("cart").innerHTML= html;
+}
+
+function getCartItems()
+{
+    var tbodys = document.querySelectorAll("tbody");
+
+    tbodys = Array.from(tbodys);
+    tbodys.shift();
+    tbodys.forEach(tbody=>
+        {
+            var trs = tbody.children[0].children;
+            console.log(trs);
+            var cartItem = {
+                itemName: trs[0].innerHTML,
+                price: parseFloat(trs[1].innerHTML.substring(1)),
+                quantity: parseInt(trs[2].innerHTML)
+            }
+            finalCartItems.push(cartItem);
+        }
+    );
+    
+    // console.log(tbodys);
+    // console.log(finalCartItems);
+
+}
+
+function pushCartItems()
+{
+    getCartItems();
+
+    const addCartItemsAPIURL = "https://localhost:5000/api/cartTotals";
+    
+    fetch(addCartItemsAPIURL, {
+        method: "PUT",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(finalCartItems)
+    }).then((response)=>{
+        console.log(response);
+    })
 }
 
 /*
