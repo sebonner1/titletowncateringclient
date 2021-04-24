@@ -2,39 +2,39 @@ var cart = [];
 var items = [
     {
         'id': 1,
-        'description': 'Chicken Parm',
+        'itemName': 'Chicken Parm',
         'price': 11.50,
-        'count': 1
+        'quantity': 1
     },
     {
         'id':2,
-        'description': 'Chocolate Chip Cookie(s)',
+        'itemName': 'Chocolate Chip Cookie(s)',
         'price': 2.50,
-        'count': 1
+        'quantity': 1
     },
     {
         'id': 3,
-        'description': 'Veggie Burger',
+        'itemName': 'Veggie Burger',
         'price': 10.00,
-        'count': 1
+        'quantity': 1
     },
     {
         'id':4,
-        'description': 'Chicken Salad',
+        'itemName': 'Chicken Salad',
         'price': 6.75,
-        'count': 1
+        'quantity': 1
     },
     {
         'id': 5,
-        'description': 'Turkey Melt',
+        'itemName': 'Turkey Melt',
         'price': 5.25,
-        'count': 1
+        'quantity': 1
     },
     {
         'id': 6,
-        'description': 'House Salad',
+        'itemName': 'House Salad',
         'price': 7.50,
-        'count': 1
+        'quantity': 1
     }
 ]
 
@@ -68,7 +68,7 @@ function handleAddItem(id){
 function handleAddOne(id){
     cart.forEach((item)=>{
         if(item.id==id){
-            item.count++;
+            item.quantity++;
         }
     })
     populateCart();
@@ -77,7 +77,7 @@ function handleAddOne(id){
 function handleSubOne(id){
     cart.forEach((item)=>{
         if(item.id==id){
-            item.count--;
+            item.quantity--;
         }
     });
     populateCart();
@@ -85,12 +85,12 @@ function handleSubOne(id){
 
 function populateCart(){
     let html= "<table>";
-    html += "<tr><th>Description</th><th style: \"text-align:center;\">Price</th><th>Count</th><th>Total</th></tr>";
+    html += "<tr><th>Description</th><th style: \"text-align:center;\">Price</th><th>Quantity</th><th>Total</th></tr>";
     cart.forEach((item) =>{
-      html+="<tbody><td>"+item.description+"</td>";
+      html+="<tbody><td>"+item.itemName+"</td>";
       html+="<td>$"+item.price+"</td>";
-      html+="<td>"+item.count +"</td>";
-      html+="<td>"+(item.count * item.price) +"</td>";
+      html+="<td>"+item.quantity +"</td>";
+      html+="<td>"+(item.quantity * item.price) +"</td>";
       html+="<td><button onclick=\"handleAddOne("+item.id+")\">+</button></td>";
       html+="<td><button onclick=\"handleSubOne("+item.id+")\">-</button></td></tbody>";
     //   html +="</table>";
