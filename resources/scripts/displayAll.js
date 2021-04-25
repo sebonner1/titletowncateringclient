@@ -40,19 +40,14 @@ function getMostPopularItem()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.OrderID, 
+            html += "<li>" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.price,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.quantity,
+            html += "Quantity = "+CartTotal.quantity,
             "</li>"
         })
         html += "</ul>";
@@ -72,19 +67,14 @@ function getLeastPopularItem()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.OrderID, 
+            html += "<li>" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.price,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.quantity,
+            html += "Quantity = "+CartTotal.quantity,
             "</li>"
         })
         html += "</ul>";
@@ -104,19 +94,14 @@ function getMostProfitItem()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.OrderID, 
+            html += "<li>" + CartTotal.itemName,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.itemName,
+            html += "$"+CartTotal.price,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.price,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.quantity,
             "</li>"
         })
         html += "</ul>";
@@ -140,15 +125,63 @@ function getPickupMethodItem()
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += "$" + CartTotal.itemName,
+            html += CartTotal.orderPlaced,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.price,
+            html += CartTotal.orderDate,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.quantity,
+            html += CartTotal.fulfilledStatus,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderEventMethod,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderDescription,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
+
+function getMonthlyOrder()
+{
+    const monthlyReportAPIURL = "https://localhost:5000/api/ordersbymonth";
+
+    fetch(monthlyReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" +CartTotal.OrderID, 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderPlaced,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderDate,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.fulfilledStatus,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderEventMethod,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CartTotal.orderDescription,
             "</li>"
         })
         html += "</ul>";
@@ -161,38 +194,41 @@ function getPickupMethodItem()
 // add to the if statement here
 
 // TTC TEAM - make sure my syntax is right here with the if and else if, thank you!!! 
-const selectmenu = document.querySelector("select");
-selectmenu.addEventListener("input", (e) => {
-    //getAllReports();
-    console.log(e.target.value);
-    if(e.target.value = "viewall")
-    {
-        getAllReports();
-    }
-    else{
-        if(e.target.value = "Orderspermonth")
-        {
-            // insert the method here
-        }
-        else if(e.target.value = "Mostpopularitems")
-        {
-            getMostPopularItem();
-        }
-        else if(e.target.value = "Mostprofitableitems")
-        {
-            getMostProfitItem();
-        }
-        else if(e.target.value = "Percentpickupvsdelivered")
-        {
-            // insert the method here
-        }
-        else if(e.target.value = "Mostpopularhours")
-        {
-            // insert the method here
-        }
-        else if(e.target.value = "Leastpopularitem")
-        {
-            getLeastPopularItem();
-        }
-    }
-})
+// const selectmenu = document.querySelector("select");
+// selectmenu.addEventListener("input", (e) => {
+//     //getAllReports();
+//     console.log(e.target.value);
+//     if(e.target.value = "viewall")
+//     {
+//         getAllReports();
+//     }
+//     else if(e.target.value = "Orderspermonth")
+//     {
+//         console.log("hi");
+//     }
+//     else if(e.target.value = "Mostpopularitems")
+//     {
+//         console.log("most pop items displayall");
+//         getMostPopularItem();
+//     }
+//     else if(e.target.value = "Mostprofitableitems")
+//     {
+//         console.log("most profitable in displayall");
+//         getMostProfitItem();
+//     }
+//     if(e.target.value = "Percentpickupvsdelivered")
+//     {
+//         console.log("percentpickup");
+//         getPickupMethodItem();
+//     }
+//     if(e.target.value = "Mostpopularhours")
+//     {
+//         console.log("mostpopularhours");
+//     }
+//     else(e.target.value = "Leastpopularitem")
+//     {
+//         console.log("least pop item displayall");
+//         getLeastPopularItem();
+//     }
+//     }
+// )

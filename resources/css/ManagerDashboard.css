@@ -58,3 +58,14 @@ a.red {
 {
     text-align: center;
 }
+
+.reportsbutton{
+        background-color: black;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: black;
+        cursor: pointer;
+        width: 35%;
+        text-align: center;
+}

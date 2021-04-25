@@ -25,16 +25,22 @@
 </nav>
 <div class="reportdropdown">
 <h2>Choose a report to view:</h2>
-<select id = "selectmenu">
+<button onclick="getAllReports()" id= "ViewAll" class= "reportsbutton">View All</button>
+<button onclick="getMonthlyOrder()" id= "Orderspermonth" class= "reportsbutton">Orders per Month</button>
+<button onclick="getMostPopularItem()" id= "Mostpopularitems" class= "reportsbutton">Most Popular Items</button>
+<button onclick="getMostProfitItem()" id= "Mostprofitableitems" class= "reportsbutton">Most Profitable Items</button>
+<button onclick="getPickupMethodItem()" id= "Percentpickupvsdelivered" class= "reportsbutton">Percent Pickedup vs Delivered</button>
+<button onclick="getLeastPopularItem()" id= "Leastpopularitems" class= "reportsbutton">Least Popular Items</button>
+
+<!-- <select id = "selectmenu">
   <option value = "">Click to view reports</option>
   <option value="Viewall">View all</option>
   <option value="Orderspermonth">Orders per month</option>
   <option value="Mostpopularitems">Most popular items</option>
   <option value="Mostprofitableitems">Most profitable items</option>
   <option value="Percentpickupvsdelivered">Percent pickup vs delivered</option>
-  <option value="Mostpopularhours">Most popular hours of service per day</option>
   <option value="Leastpopularitem">Least popular item</option>
-</select>
+</select> -->
 </div>
 <!--<script type = "text/javascript" src = "./scripts/cartfunc.js">
   getCart();
