@@ -121,27 +121,33 @@ function getPickupMethodItem()
     }).then(function(json){
         let html = "<ul>";
         json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal.OrderID, 
+            html += "<li>" + CartTotal.orderEventMethod,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.orderPlaced,
+            "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("carttotals").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
+
+function getDeliveryMethodItem()
+{
+    const deliveryMethodReportAPIURL = "https://localhost:5000/api/deliveryReport";
+
+    fetch(deliveryMethodReportAPIURL).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+        let html = "<ul>";
+        json.forEach((CartTotal)=>{
+            html += "<li>" + CartTotal.orderEventMethod,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CartTotal.orderDate,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.fulfilledStatus,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.orderEventMethod,
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            html += CartTotal.orderDescription,
             "</li>"
         })
         html += "</ul>";
