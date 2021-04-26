@@ -1,37 +1,84 @@
 console.log("javascript loaded"); 
+function getEvents(){
+    const allEventsAPIURL = "https://localhost:5000/api/CateringEvent";
 
-function getEvents(){ 
+    fetch(allEventsAPIURL).then(function(response){
+        return response.json();
+    }).then(function(json)
+    {
+        let html ="<ul>";
+        json.reverse().forEach((CateringEvent)=>{
+            html += "<li>" + CateringEvent.OrderID
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CateringEvent.orderPlaced,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CateringEvent.orderDate,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CateringEvent.fulfilledStatus,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CateringEvent.orderEventMethod,
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += CateringEvent.orderDescription + "</li>"
+        })
+        html += "</ul>";
+        document.getElementById("cateringevents").innerHTML = html;
+    }).catch(function(error){
+        console.log(error);
+    })
+}
 
-const allEventsAPIURL = "https://localhost:5000/api/CateringEvent"; 
-console.log("made it to the js"); 
-fetch(allEventsAPIURL).then(function(response){ 
-return response.json(); 
-}).then(function(json){ 
-let html = "<ul>"; 
-json.forEach((CateringEvent)=>{ 
-html += "<li id = event" + CateringEvent.orderID+ " description = "+ CateringEvent.orderDescription+ ">" +CartItem.quantity, 
-html += "&nbsp", 
-html += "&nbsp", 
-html += "&nbsp", 
-html += CateringEvent.orderEventMethod, 
-html += "&nbsp", 
-html += "&nbsp", 
-html += "&nbsp", 
-html += CateringEvent.orderDate, 
-html += "&nbsp", 
-html += "&nbsp", 
-html += "&nbsp", 
-html += "<button onclick=\"addEvent("+CateringEvent.orderID+")\">+</button>", 
-html += "<button onclick=\"delEvent("+CateringEvent.orderID+")\">-</button>" + "</li>" 
-}) 
+// function getEvents(){ 
 
-html += "</ul>"; 
-document.getElementById("cateringevents").innerHTML = html; 
-}).catch(function(error){ 
-console.log(error); 
-}) 
+// const allEventsAPIURL = "https://localhost:5000/api/CateringEvent"; 
+// console.log("made it to the js"); 
+// fetch(allEventsAPIURL).then(function(response){ 
+// return response.json(); 
+// }).then(function(json){ 
+// let html = "<ul>"; 
+// json.forEach((CateringEvent)=>{ 
+// html += "<li id = event" + CateringEvent.orderID+ " description = "+ CateringEvent.orderDescription+ ">" +CateringEvent.quantity, 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += CateringEvent.orderEventMethod, 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += CateringEvent.orderDate, 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += "&nbsp", 
+// html += "<button onclick=\"addEvent("+CateringEvent.orderID+")\">+</button>", 
+// html += "<button onclick=\"delEvent("+CateringEvent.orderID+")\">-</button>" + "</li>" 
+// }) 
 
-} 
+// html += "</ul>"; 
+// document.getElementById("cateringevents").innerHTML = html; 
+// }).catch(function(error){ 
+// console.log(error); 
+// }) 
+
+// } 
 
 function addEvent(orderID){ 
 const addCartAPIURL = "https://localhost:5000/api/CateringEvent/" + orderID; 
