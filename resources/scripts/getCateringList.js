@@ -32,11 +32,11 @@ function handleOnLoad(){
     populateEventList(); 
 } 
 
-function handleAddEvent(id){ 
+function handleAddEvent(event){ 
     var found = false; 
-    calendarofevents.forEach((item)=>{ 
+    calendarofevents.forEach((event)=>{ 
 
-    if(item.id==id){ 
+    if(event.id==id){ 
         handleAddOne(id); 
         found=true; 
     } 
@@ -44,53 +44,28 @@ function handleAddEvent(id){
 }) 
 
 if(!found){ 
-    items.forEach((item)=>{ 
-if(item.id==id){ 
-    calendarofevents.push(item); 
+    events.forEach((event)=>{ 
+if(event.id==id){ 
+    calendarofevents.push(event); 
 } 
 }) 
 } 
 
 populateEventList(); 
 
-} 
-
- 
- 
-
-function handleAddOne(id){ 
-    calendarofevents.forEach((item)=>{ 
-    if(item.id==id){ 
-        item.quantity++; 
-    } 
-}) 
-    populateEventList(); 
-} 
-
-function handleSubOne(id){ 
-    calendarofevents.forEach((item)=>{ 
-
-if(item.id==id){ 
-
-item.quantity--; 
-
-} 
-
-}); 
-populateEventList(); 
-} 
+}
 
  
 function populateEventList(){ 
     let html= "<table>"; 
     html += "<tr><th>Description</th><th style: \"text-align:center;\">Price</th><th>Quantity</th><th>Total</th></tr>"; 
-    calendarofevents.forEach((item) =>{ 
-    html+="<tbody><td>"+item.OrderID+"</td>"; 
-    html+="<td>"+item.orderPlaced+"</td>"; 
-    html+="<td>"+item.orderDate +"</td>"; 
-    html+="<td>"+item.fulfilledStatus+"</td>"; 
-    html+="<td>"+item.orderEventMethod+"</td>"; 
-    html+="<td>"+item.orderDescription+"</td></tbody>"; 
+    calendarofevents.forEach((event) =>{ 
+    html+="<tbody><td>"+event.OrderID+"</td>"; 
+    html+="<td>"+event.orderPlaced+"</td>"; 
+    html+="<td>"+event.orderDate +"</td>"; 
+    html+="<td>"+event.fulfilledStatus+"</td>"; 
+    html+="<td>"+event.orderEventMethod+"</td>"; 
+    html+="<td>"+event.orderDescription+"</td></tbody>"; 
 // html +="</table>"; 
 }); 
 document.getElementById("calendarofevents").innerHTML= html; 
