@@ -144,6 +144,7 @@ function pushEventItemss()
     }).then((response)=>{
         console.log(response);
         console.log("she's a runner, she's a trackstar");
+        window.location.href= "Receipt.html";
         //getEvents();
     })
 } 
