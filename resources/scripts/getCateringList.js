@@ -125,25 +125,7 @@ function getEvents(){
 
 // // } 
 
- 
- 
 
-// // function pushEventItems() 
-// { 
-// getEventList(); 
-// const postCateringEventAPIURL = "https://localhost:5000/api/CateringEvent"; 
-// console.log(finalEventItems);
-// fetch(postCateringEventAPIURL, { 
-// method: "PUT", 
-// headers: { 
-//     "Accept": 'application/json', 
-//     "Content-Type": 'application/json' 
-// }, 
-// body: JSON.stringify(finalEventItems) 
-// }).then((response)=>{ 
-// console.log(response); 
-// }) 
-// } 
 
 /* 
 
