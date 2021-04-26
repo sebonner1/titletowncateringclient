@@ -157,72 +157,72 @@ function getDeliveryMethodItem()
     })
 }
 
-function getMonthlyOrder()
-{
-    const monthlyReportAPIURL = "https://localhost:5000/api/ordersbymonth";
+// function getMonthlyOrder()
+// {
+//     const monthlyReportAPIURL = "https://localhost:5000/api/ordersbymonth";
 
-    fetch(monthlyReportAPIURL).then(function(response){
-        console.log(response);
-        return response.json();
-    }).then(function(json){
-        let html = "<ul>";
-        json.forEach((CartTotal)=>{
-            html += "<li>" +CartTotal, 
-            html += "&nbsp",
-            html += "&nbsp",
-            html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += CartTotal,
-            // html += "&nbsp",
-            // html += "&nbsp",
-            // html += "&nbsp",
-            "</li>"
-        })
-        html += "</ul>";
-        document.getElementById("carttotals").innerHTML = html;
-    }).catch(function(error){
-        console.log(error);
-    })
-}
+//     fetch(monthlyReportAPIURL).then(function(response){
+//         console.log(response);
+//         return response.json();
+//     }).then(function(json){
+//         let html = "<ul>";
+//         json.forEach((CartTotal)=>{
+//             html += "<li>" +CartTotal, 
+//             html += "&nbsp",
+//             html += "&nbsp",
+//             html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += CartTotal,
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             // html += "&nbsp",
+//             "</li>"
+//         })
+//         html += "</ul>";
+//         document.getElementById("carttotals").innerHTML = html;
+//     }).catch(function(error){
+//         console.log(error);
+//     })
+// }
 
 // add to the if statement here
 
