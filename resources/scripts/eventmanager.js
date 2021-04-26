@@ -140,7 +140,7 @@ function pushEventItemss()
         body: JSON.stringify({
             // orderDate: selecteddate + timesel,
             orderDescription: addresssel,
-            orderEventMethod: eventstat
+            // orderEventMethod: eventstat
           })
     }).then((response)=>{
         console.log(response);
