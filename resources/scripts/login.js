@@ -11,7 +11,7 @@ loginButton.addEventListener("click", (e) => {
     // The manager login is below, working on taking it to the next page, the dashboard
     if (username === "TTCManager" && password === "TitleTown") {
         alert("You have successfully logged in.");
-        window.location.href= "../resources/ManagerDashboard.html";
+        window.location.href= "ManagerDashboard.html";
     } else {
         loginErrorMsg.style.opacity = 1;
     }
@@ -19,7 +19,7 @@ loginButton.addEventListener("click", (e) => {
     // The manager login is below, working on taking it to the next page, the dashboard
     if (username === "TTCEmployee" && password === "TitleTownCatering") {
         alert("You have successfully logged in.");
-        window.location.href= "../resources/EmployeeDashboard.html";
+        window.location.href= "EmployeeDashboard.html";
     } else {
         loginErrorMsg.style.opacity = 1;
     }
