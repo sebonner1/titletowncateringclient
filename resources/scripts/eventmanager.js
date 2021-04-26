@@ -125,7 +125,7 @@ function pushEventItemss()
     const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
     const timesel = document.getElementById("time").value;
     const addresssel = document.getElementById("address").value;
-    var eventstat = parseInt(document.getElementById("method").value);
+    const eventstat = parseInt(document.getElementById("method").value);
     console.log(eventstat);
     var selecteddate;
     document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
