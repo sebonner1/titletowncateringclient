@@ -144,6 +144,6 @@ function pushEventItemss()
     }).then((response)=>{
         console.log(response);
         console.log("she's a runner, she's a trackstar");
-        getEvents();
+        //getEvents();
     })
 } 
