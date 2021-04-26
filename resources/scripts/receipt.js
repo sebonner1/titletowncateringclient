@@ -77,7 +77,7 @@ function getCartItemsReceipt(){
         html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
         html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
         html += "</ul>";
-        document.getElementById("cartitems").innerHTML = html;
+        document.getElementById("cart").innerHTML = html;
     }).catch(function(error){
         console.log(error);
     })
