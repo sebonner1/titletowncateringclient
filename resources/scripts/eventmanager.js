@@ -138,13 +138,13 @@ function pushEventItemss()
         },
         body: JSON.stringify({
             // orderDate: selecteddate + timesel,
-            orderDescription: addresssel,
+            // orderDescription: addresssel,
             // orderEventMethod: eventstat
           })
-    }).then((response)=>{
+    }).then((response)=>{ //error on the reponse like here as well?
         console.log(response);
         console.log("she's a runner, she's a trackstar");
         window.location.href= "Receipt.html";
-        getEvents();
+        getEvents(); //error when calling getEvents
     })
 } 
