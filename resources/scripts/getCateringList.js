@@ -1,4 +1,4 @@
-//let's try this again
+// let's try this again
 
 function getEvents(){
     const allEventsAPIURL = "https://localhost:5001/api/bigalapi";
@@ -96,39 +96,39 @@ function getEvents(){
 // document.getElementById("calendarofevents").innerHTML= html; 
 // } 
 
-// // get from the backend
+// // // get from the backend
 
-// function getEventList() 
-// { 
-//     var tbodys = document.querySelectorAll("tbody"); 
-//     tbodys = Array.from(tbodys); 
-//     tbodys.shift(); 
-//     tbodys.forEach(tbody=> 
-//     { 
-//         var trs = tbody.children[0].children; 
-//         console.log(trs); 
-//         var eventItem = { 
-//         OrderID: trs[0].innerHTML, 
-//         orderPlaced: trs[1].innerHTML, 
-//         orderDate: trs[2].innerHTML, 
-//         fulfilledStatus: trs[3].innerHTML, 
-//         orderEventMethod: trs[4].innerHTML, 
-//         orderDescription: trs[5].innerHTML, 
-//     } 
-//         finalEventItems.push(eventItem); 
-//     }
-// ); 
+// // function getEventList() 
+// // { 
+// //     var tbodys = document.querySelectorAll("tbody"); 
+// //     tbodys = Array.from(tbodys); 
+// //     tbodys.shift(); 
+// //     tbodys.forEach(tbody=> 
+// //     { 
+// //         var trs = tbody.children[0].children; 
+// //         console.log(trs); 
+// //         var eventItem = { 
+// //         OrderID: trs[0].innerHTML, 
+// //         orderPlaced: trs[1].innerHTML, 
+// //         orderDate: trs[2].innerHTML, 
+// //         fulfilledStatus: trs[3].innerHTML, 
+// //         orderEventMethod: trs[4].innerHTML, 
+// //         orderDescription: trs[5].innerHTML, 
+// //     } 
+// //         finalEventItems.push(eventItem); 
+// //     }
+// // ); 
 
-// // console.log(tbodys); 
+// // // console.log(tbodys); 
 
-// // console.log(finalCartItems); 
+// // // console.log(finalCartItems); 
 
-// } 
+// // } 
 
  
  
 
-// function pushEventItems() 
+// // function pushEventItems() 
 // { 
 // getEventList(); 
 // const postCateringEventAPIURL = "https://localhost:5000/api/CateringEvent"; 

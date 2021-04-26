@@ -7,8 +7,8 @@ function getEvents(){
     }).then(function(json)
     {
         let html ="<ul>";
-        json.reverse().forEach((CateringEvent)=>{
-            html += "<li>" + CateringEvent.OrderID
+        json.forEach((CateringEvent)=>{
+            html += "<li>" + CateringEvent.OrderID,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
@@ -38,7 +38,8 @@ function getEvents(){
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
-            html += CateringEvent.orderDescription + "</li>"
+            html += CateringEvent.orderDescription,
+            html += "<button onclick=\"delEvent("+CateringEvent.orderID+")\">delete</button>" + "</li>" 
         })
         html += "</ul>";
         document.getElementById("cateringevents").innerHTML = html;
@@ -81,38 +82,36 @@ function getEvents(){
 // } 
 
 function addEvent(orderID){ 
-const addCartAPIURL = "https://localhost:5000/api/CateringEvent/" + orderID; 
-console.log(orderID); 
-var event = { 
-description: document.getElementById("event"+orderID).getAttribute("description"), 
-
-} 
-
-fetch(addCartAPIURL, { 
-method: "PUT", 
-headers: { 
-"Accept": 'application/json', 
-"Content-Type": 'application/json' 
-}, 
-
-body: JSON.stringify(event) 
-}).then((response)=>{ 
-console.log(response); 
-getCart(); 
-}) 
-
-} 
+    const putPostsAPIURL = "https://localhost:5001/api/CateringEvent/" + orderID;
+    console.log(putPostsAPIURL);
+    const putEvent = document.getElementById("updatePost").value;
+    console.log(putEvent);
+       
+    fetch(putPostsAPIURL, {
+        method: "PUT",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            OrderID: orderID,
+            posttext: putEvent
+        })
+    }).then(function(response){
+        console.log(response);  
+        getPosts();
+    })
+    }
 
 function delEvent(orderID){ 
 const delEventAPIURL = "https://localhost:5000/api/CateringEvent/" + orderID; 
 console.log(orderID); 
 fetch(delEventAPIURL, { 
-method: "DELETE", 
-headers: { 
-"Accept": 'application/json', 
-"Content-Type": 'application/json' 
-} 
-
+    method: "DELETE", 
+    headers: { 
+        "Accept": 'application/json', 
+        "Content-Type": 'application/json' 
+    } 
 }).then((response)=>{ 
     console.log(response); 
     getEvents(); 
