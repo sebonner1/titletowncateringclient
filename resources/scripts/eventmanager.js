@@ -118,31 +118,31 @@ fetch(delEventAPIURL, {
 }) 
 
 } 
-function pushEventItemss() 
-{ 
-    console.log("made it to pusheventitems.js");
-    const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
-    const timesel = document.getElementById("time").value;
-    const addresssel = document.getElementById("address").value;
-    const eventstat = document.getElementById("method").value;
-    const selecteddate;
-    document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
-        selecteddate = e.target.value;
-        });
-    fetch(addPostsAPIURL, {
-        method: "POST",
-        headers: {
-            "Accept": 'application/json',
-            "Content-Type": 'application/json',
-        },
-        body: JSON.stringify({
-            orderDate: selecteddate + timesel,
-            orderDescription: addresssel,
-            orderEventMethod: eventstat
-          })
-    }).then((response)=>{
-        console.log(response);
-        console.log("she's a runner, she's a trackstar");
-        getEvents();
-    })
-} 
+// function pushEventItemss() 
+// { 
+//     console.log("made it to pusheventitems.js");
+//     const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
+//     const timesel = document.getElementById("time").value;
+//     const addresssel = document.getElementById("address").value;
+//     const eventstat = document.getElementById("method").value;
+//     const selecteddate;
+//     document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
+//         selecteddate = e.target.value;
+//         });
+//     fetch(addPostsAPIURL, {
+//         method: "POST",
+//         headers: {
+//             "Accept": 'application/json',
+//             "Content-Type": 'application/json',
+//         },
+//         body: JSON.stringify({
+//             orderDate: selecteddate + timesel,
+//             orderDescription: addresssel,
+//             orderEventMethod: eventstat
+//           })
+//     }).then((response)=>{
+//         console.log(response);
+//         console.log("she's a runner, she's a trackstar");
+//         getEvents();
+//     })
+// } 
