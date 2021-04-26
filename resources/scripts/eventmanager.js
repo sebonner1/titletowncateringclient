@@ -8,7 +8,7 @@ function getEvents(){
     {
         let html ="<ul>";
         json.forEach((CateringEvent)=>{
-            html += "<li>" + CateringEvent.OrderID,
+            html += "<li>" + CateringEvent.orderID,
             html += "&nbsp",
             html += "&nbsp",
             html += "&nbsp",
