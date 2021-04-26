@@ -6,7 +6,7 @@ startorder.addEventListener("click", (e) => {
         window.location.href= "../resources/index.html";
 })
 function pushCartData(){
-        const postCartAPIURL = "https://localhost:5000/api/reports";
+        const postCartAPIURL = "https://ttcapi.herokuapp.com/api/reports"; // "https://localhost:5000/api/reports"; // https://ttcapi.herokuapp.com/
         // var itemPost = "chicken parmesan";
         // itemPost = itemPost.toString();
         // var item = {

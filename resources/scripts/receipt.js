@@ -58,7 +58,7 @@ function getCartItemsReceipt(){
 
     // front end or storage here
 
-    const allCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
 
     var totalPrice = 0.0;
     fetch(allCartAPIURL).then(function(response){

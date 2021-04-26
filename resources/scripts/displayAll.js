@@ -1,7 +1,7 @@
 function getAllReports()
 {
-    const allReportsAPIURL = "https://localhost:5000/api/reports";
-
+    const allReportsAPIURL = "https://ttcapi.herokuapp.com/api/reports";
+    
     fetch(allReportsAPIURL).then(function(response){
         console.log(response);
         return response.json();
@@ -32,7 +32,7 @@ function getAllReports()
 
 function getMostPopularItem()
 {
-    const popItemReportAPIURL = "https://localhost:5000/api/mostPopItemsReport";
+    const popItemReportAPIURL = "https://ttcapi.herokuapp.com/api/mostPopItemsReport";
 
     fetch(popItemReportAPIURL).then(function(response){
         console.log(response);
@@ -59,7 +59,7 @@ function getMostPopularItem()
 
 function getLeastPopularItem()
 {
-    const leastPopItemReportAPIURL = "https://localhost:5000/api/leastPopItemsReport";
+    const leastPopItemReportAPIURL = "https://ttcapi.herokuapp.com/api/leastPopItemsReport";
 
     fetch(leastPopItemReportAPIURL).then(function(response){
         console.log(response);
@@ -86,7 +86,7 @@ function getLeastPopularItem()
 
 function getMostProfitItem()
 {
-    const mostProfitItemReportAPIURL = "https://localhost:5000/api/MostProfitItemsReport";
+    const mostProfitItemReportAPIURL = "https://ttcapi.herokuapp.com/api/MostProfitItemsReport";
 
     fetch(mostProfitItemReportAPIURL).then(function(response){
         console.log(response);
@@ -113,7 +113,7 @@ function getMostProfitItem()
 
 function getPickupMethodItem()
 {
-    const pickupMethodReportAPIURL = "https://localhost:5000/api/pickupMethodReport";
+    const pickupMethodReportAPIURL = "https://ttcapi.herokuapp.com/api/pickupMethodReport";
 
     fetch(pickupMethodReportAPIURL).then(function(response){
         console.log(response);
@@ -136,7 +136,7 @@ function getPickupMethodItem()
 
 function getDeliveryMethodItem()
 {
-    const deliveryMethodReportAPIURL = "https://localhost:5000/api/deliveryReport";
+    const deliveryMethodReportAPIURL = "https://ttcapi.herokuapp.com/api/deliveryReport";
 
     fetch(deliveryMethodReportAPIURL).then(function(response){
         console.log(response);

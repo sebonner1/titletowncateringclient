@@ -103,7 +103,7 @@ function pushCartData()
 { 
 console.log("push data");
 
-const postCateringEventAPIURL = "https://localhost:5000/api/CateringEvent"; 
+const postCateringEventAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent"; 
 cateringEvent = cateringEvent.toString(); 
 var temp; 
 if(methodSelection = "Pickup") 

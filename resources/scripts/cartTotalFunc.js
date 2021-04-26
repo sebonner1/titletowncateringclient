@@ -1,7 +1,7 @@
 function postCart(cart)
 {
     console.log("made it to the post cart");
-    const allCartTotalAPIURL = "https://localhost:5000/api/cartTotal";
+    const allCartTotalAPIURL = "https://ttcapi.herokuapp.com/api/cartTotal";
     
     fetch(allCartTotalAPIURL, {
 

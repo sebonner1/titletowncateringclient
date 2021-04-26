@@ -126,7 +126,7 @@ function pushCartItems()
 {
     getCartItems();
 
-    const addCartItemsAPIURL = "https://localhost:5000/api/cartTotals";
+    const addCartItemsAPIURL = "https://ttcapi.herokuapp.com/api/cartTotals";
     
     fetch(addCartItemsAPIURL, {
         method: "PUT",

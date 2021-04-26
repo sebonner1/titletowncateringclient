@@ -1,6 +1,6 @@
 console.log("javascript loaded");
 function getCart(){
-    const allCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI" // https://localhost:5000/api/cartAPI";
 
     fetch(allCartAPIURL).then(function(response){
         return response.json();
@@ -38,7 +38,7 @@ function getCart(){
     })
 }
 function addCart(cartid){
-    const addCartAPIURL = "https://localhost:5000/api/cartAPI/" + cartid;
+    const addCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI/" + cartid;
     console.log(cartid);
     var item = {
         quantity : parseInt(document.getElementById("item"+cartid).getAttribute("quantitya")),
@@ -58,7 +58,7 @@ function addCart(cartid){
     })
 }
 function delCart(cartid){
-    const delCartAPIURL = "https://localhost:5000/api/cartAPI/" + cartid;
+    const delCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI/" + cartid;
     console.log(cartid);
     
     fetch(delCartAPIURL, {
@@ -73,7 +73,7 @@ function delCart(cartid){
     })
 }
 function chickenparmfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "chicken parmesan";
     itemPost = itemPost.toString();
     var item = {
@@ -96,7 +96,7 @@ function chickenparmfunction(){
     })
 }
 function chocchipfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "chocolate chip cookie";
     itemPost = itemPost.toString();
     var item = {
@@ -119,7 +119,7 @@ function chocchipfunction(){
     })
 }
 function vegburgfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "veggie burger";
     itemPost = itemPost.toString();
     var item = {
@@ -142,7 +142,7 @@ function vegburgfunction(){
     })
 }
 function chicksaladfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "chicken salad sandwich";
     itemPost = itemPost.toString();
     var item = {
@@ -165,7 +165,7 @@ function chicksaladfunction(){
     })
 }
 function turkfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "turkey melt";
     itemPost = itemPost.toString();
     var item = {
@@ -188,7 +188,7 @@ function turkfunction(){
     })
 }
 function housesaladfunction(){
-    const postCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const postCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     var itemPost = "house salad";
     itemPost = itemPost.toString();
     var item = {
@@ -212,7 +212,7 @@ function housesaladfunction(){
 }
 
 function getDescription(){
-    const allCartAPIURL = "https://localhost:5000/api/cartAPI";
+    const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
 
     fetch(allCartAPIURL).then(function(response){
         return response.json();

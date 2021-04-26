@@ -1,6 +1,6 @@
 console.log("javascript loaded"); 
 function getEvents(){
-    const allEventsAPIURL = "https://localhost:5000/api/CateringEvent";
+    const allEventsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
 
     fetch(allEventsAPIURL).then(function(response){
         return response.json();
@@ -82,7 +82,7 @@ function getEvents(){
 // } 
 
 function addEvent(orderID){ 
-    const putPostsAPIURL = "https://localhost:5001/api/CateringEvent/" + orderID;
+    const putPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent/" + orderID;
     console.log(putPostsAPIURL);
     const putEvent = document.getElementById("updatePost").value;
     console.log(putEvent);
@@ -104,7 +104,7 @@ function addEvent(orderID){
     }
 
 function delEvent(orderID){ 
-const delEventAPIURL = "https://localhost:5000/api/CateringEvent/" + orderID; 
+const delEventAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent/" + orderID; 
 console.log(orderID); 
 fetch(delEventAPIURL, { 
     method: "DELETE", 
@@ -121,7 +121,7 @@ fetch(delEventAPIURL, {
 function pushEventItemss() 
 { 
     console.log("made it to pusheventitems.js");
-    const addPostsAPIURL = "https://localhost:5001/api/CateringEvent";
+    const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
     const timesel = document.getElementById("time").value;
     const addresssel = document.getElementById("address").value;
     const eventstat = document.getElementById("method").value;
