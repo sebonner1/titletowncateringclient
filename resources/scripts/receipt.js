@@ -55,7 +55,7 @@
 
 console.log("javascript loaded");
 function getCartItemsReceipt(){
-
+    console.log("inside the getCartItems method");
     // front end or storage here
 
     const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
