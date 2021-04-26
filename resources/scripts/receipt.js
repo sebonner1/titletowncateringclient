@@ -83,8 +83,9 @@ function getCartItemsReceipt(){
     })
 }
 
-const purchaseButton = document.getElementById("confirm-purchase");
-purchaseButton.addEventListener("click", (e) => {
+var purchaseButton = document.getElementById("confirm-purchase");
+if(purchaseButton){
+    purchaseButton.addEventListener('click', swapper, false);
     alert("You have completed your transaction.");
     window.location.href= "index.html";
-})
+}
