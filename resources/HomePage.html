@@ -1,5 +1,5 @@
-<!DOCTYPE html> <!--COOL BEANS-->
-<html lang="en"> <!--AWESOME SAUCE-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +7,79 @@
     <title>Title Town Catering Company</title>
     <title>Title Town Catering</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/HomePage.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>
+<body onload = getList()>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src= "./scripts/cartfunc.js"></script>
+    <!--<script src="./scripts/index.js"></script>-->
+    <script src="./scripts/receipt.js"></script>
+    <!--<script src="./scripts/cartTotalFunc.js"></script>-->
+    <script type="text/javascript" src = "./scripts/getList.js"></script>
+    <!--Banner Section-->
+    <div class="banner">
+        <h1 style = "font-size: 50px;">Title Town Catering</h1>
+    </div>
+    <div class = "menubanner">
+        <h1 style = "font-size: 90px;">Menu</h1>
+    </div>
+    <div class = "emptybanner">
+        <h1>   </h1>
+    </div>
+    </div>
 
     <nav class="navbar navbar-default">
-        <div class="navbar-header">Title Town Catering</div>
+        <div class="navbar-header"></div>
         <div>
-        <ul class="nav navbar-nav">            
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="./Login.html">Login</a></li>
         </ul>
         </div>
     </nav>
-    <!-- Insert image here-->
-    <button id="startorder" onclick = pushCartData()>Click here to start your order</button>
 
-    <script type="text/javascript" src= "./scripts/HomePage.js"></script>
+    <!--Shopping Cart starts here-->
+    <div class = "shoppinglist">
+    <h2><u>_________In Your Cart_________</u></h2>
+    <p>
+        <!--Note to self: try not to hard code here. The manager will add things to the list-->
+        <div id="cartitems"></div>
+        <div id="cart"></div>
+        <ul>
+            <!-- need to figure out why it won't work when we then try to go to the calendar... goes to the calendar but then doesn't go to the database -->
+            <button onclick="pushCartItems()" id="checkoutbutton" >Checkout</button>
+            <!-- a href="../resources/Calendar.html" -->
+        </ul>
+        <!--onclick="postCart()"-->
+    </p>
+    </div>
+
+        <!--Photos begin here-->
+        <div class="menu-display">
+            <div>
+                <button onclick="handleAddItem('1')" id ="chickenParmbutton"><img id = "chickenParmImage" src = "./images/chickenparm2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('2')" id ="chocochipbutton"><img id = "chocochipImage" src = "./images/chocchip2.jpeg" alt=""></button>
+            </div>
+            <div>
+                <button onclick="handleAddItem('3')" id ="vegburgbutton"><img id = "vegburgImage" src = "./images/veggieburger2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('4')" id ="chickensandbutton"><img id = "chickensandImage" src = "./images/chickensalad2.jpeg" alt=""></button>
+            </div>
+            <div>
+                <button onclick="handleAddItem('5')" id ="turkbutton"><img id = "turkImage" src = "./images/turkeyclub2.jpeg" alt=""></button>
+                <button onclick="handleAddItem('6')" id ="saladbutton"><img id = "saladImage" src = "./images/housesalad2.jpeg" alt=""></button>
+            </div>
+        </div>
+
+    <!-- <script src="./scripts/index.js"></script>
+    <script src="./scripts/receipt.js"></script>
+    <script src="./titletowncateringclient/resources/scripts/cartTotalFunc.js"></script> -->
+    
+    <!--Latest bootstrap jQuery-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script type = "text/javascript" src = "./scripts/getList.js"></script>
+    <script type = "text/javascript" src = "./scripts/receipt.js"></script>
 </body>
+</html>
