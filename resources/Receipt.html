@@ -112,7 +112,9 @@
                     <img src="images/amex.png" id="amex" class="creditcardimages">
                 </div>
                 <div class="form-group" id="pay-now">
-                    <button class="btn btn-default" id="confirm-purchase">Pay Now</button>
+                    <div id="cartitems"></div>
+                    <div id="cart"></div>
+                    <button onclick="pushCartItems();pushEventItemss();" class="btn btn-default" id="confirm-purchase">Pay Now</button>
                 </div>
             </form>
         </div>
