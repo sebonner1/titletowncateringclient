@@ -33,4 +33,5 @@ function pushCartData(){
 function goToCalendar()
 {
     window.location.href = "Calendar.html";
+    console.log("ingotocalendar");
 }
