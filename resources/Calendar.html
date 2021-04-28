@@ -74,7 +74,7 @@ Method: <select name="method" id="method">
   <br><br> 
 
 Address: <input type="text" id="address" name="Address"></form> 
-<button onclick="goToReceipt()" id="submitbutton">Submit</button> 
+<button onclick="pushEventItemss()" id="submitbutton">Submit</button> 
 </div> 
 
 <script src="https://jsuites.net/v4/jsuites.js"></script> 
@@ -112,14 +112,12 @@ Address: <input type="text" id="address" name="Address"></form>
         Questions for office hours: why does the href not work and go to their website? And how can I do something on the selection of a date??
     
       </nav>  
-
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 <script src="https://jsuites.net/v4/jsuites.webcomponents.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <div id="calendar">
 <jsuites-calendar value="2021-01-20" format="DD/MM/YYYY"></jsuites-calendar>
 </div>
-
 <script>
 document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) {
     console.log('New value: ' + e.target.value);
@@ -128,7 +126,6 @@ document.querySelector('jsuites-calendar').addEventListener('onclose', function(
     console.log('Calendar is closed');
 });
 </script>
-
     <div id="container">
       <form name="month" id="month" action="/action_page.php">
           Time: <select id="time" name="time">
@@ -146,7 +143,6 @@ document.querySelector('jsuites-calendar').addEventListener('onclose', function(
       <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
  
-
       
 <div class="month">
     <ul>

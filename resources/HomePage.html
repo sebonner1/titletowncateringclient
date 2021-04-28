@@ -12,7 +12,6 @@
 <body onload = getList()>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src= "./scripts/cartfunc.js"></script>
-    <script type="text/javascript" src= "./scripts/HomePage.js"></script>
     <!--<script src="./scripts/index.js"></script>-->
     <script src="./scripts/receipt.js"></script>
     <!--<script src="./scripts/cartTotalFunc.js"></script>-->
@@ -51,7 +50,7 @@
         <div id="cart"></div>
         <ul>
             <!-- need to figure out why it won't work when we then try to go to the calendar... goes to the calendar but then doesn't go to the database -->
-            <button onclick = "goToCalendar()" id="checkoutbutton" >Checkout</button>
+            <button onclick="pushCartItems()" id="checkoutbutton" >Checkout</button>
             <!-- a href="../resources/Calendar.html" -->
         </ul>
         <!--onclick="postCart()"-->
