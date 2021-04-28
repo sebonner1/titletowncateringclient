@@ -83,7 +83,7 @@ function getCartItemsReceipt(){
     // }).catch(function(error){
     //     console.log(error);
     // })
-    console.log("the cart", cart.toString());
+    console.log("the cart", cart.ToString());
     let html = "<ul>";
     cart.forEach((item)=>{
                 html += "<tbody><tr>",
