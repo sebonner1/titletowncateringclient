@@ -192,5 +192,5 @@ console.log(response);
 
 function goToReceipt()
 {
-    window.location.href= "Receipt.html";
+    window.location.href = "Receipt.html";
 }
