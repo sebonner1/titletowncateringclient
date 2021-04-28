@@ -122,8 +122,8 @@ fetch(delEventAPIURL, {
 function pushEventItemss() 
 { 
     console.log("made it to pusheventitems.js");
-    //const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
-    const addPostsAPIURL = "https://localhost:5000/api/CateringEvent";
+    const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
+    //const addPostsAPIURL = "https://localhost:5000/api/CateringEvent";
     const timesel = document.getElementById("time").value;
     const addresssel = document.getElementById("address").value;
     const eventstat = document.getElementById("method").value;
