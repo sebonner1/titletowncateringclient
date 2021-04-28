@@ -149,7 +149,7 @@ function pushEventItemss()
     }).then((response)=>{ //error on the reponse like here as well?
         console.log(response);
         console.log("she's a runner, she's a trackstar");
-        window.location.href= "Receipt.html";
+        //window.location.href= "Receipt.html";
         //getEvents(); //error when calling getEvents
     })
 } 
