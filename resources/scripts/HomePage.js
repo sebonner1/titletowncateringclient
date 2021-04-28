@@ -30,7 +30,7 @@ function pushCartData(){
         })
 }
 
-// function cartTotal()
-// {
-    
-// }
+function goToCalendar()
+{
+    window.location.href = "Calendar.html";
+}
