@@ -189,3 +189,8 @@ console.log(response);
 //     alert("You are being taken to the receipt for your transaction.");
 //     window.location.href= "../resources/Receipt.html";
 // })
+
+function goToReceipt()
+{
+    window.location.href= "Receipt.html";
+}
