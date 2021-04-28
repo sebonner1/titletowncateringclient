@@ -122,10 +122,16 @@ fetch(delEventAPIURL, {
 function pushEventItemss() 
 { 
     console.log("made it to pusheventitems.js");
-    const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
+    //const addPostsAPIURL = "https://ttcapi.herokuapp.com/api/CateringEvent";
+    const addPostsAPIURL = "https://localhost:5000/api/CateringEvent";
     const timesel = document.getElementById("time").value;
     const addresssel = document.getElementById("address").value;
     const eventstat = document.getElementById("method").value;
+
+    console.log(timesel);
+    console.log(addresssel);
+    console.log(eventstat);
+
     var selecteddate;
     document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
         selecteddate = e.target.value;
@@ -139,12 +145,12 @@ function pushEventItemss()
         body: JSON.stringify({
             // orderDate: selecteddate + timesel,
             orderDescription: addresssel,
-            // orderEventMethod: eventstat
+            orderEventMethod: eventstat
           })
     }).then((response)=>{ //error on the reponse like here as well?
         console.log(response);
         console.log("she's a runner, she's a trackstar");
         window.location.href= "Receipt.html";
-        getEvents(); //error when calling getEvents
+        //getEvents(); //error when calling getEvents
     })
 } 
