@@ -130,13 +130,14 @@ function pushEventItemss()
     console.log(timesel);
     console.log(addresssel);
     console.log(eventstat);
-
+    
     var selecteddate;
     var stringselectedDate;
+    var datenow = Date.now().toString();
     
     document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
         selecteddate = e.target.value;
-        stringselectedDate = selecteddate.String();
+        stringselectedDate = selecteddate.toString();
         });
     fetch(addPostsAPIURL, {
         method: "POST",
@@ -145,6 +146,7 @@ function pushEventItemss()
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
+            orderPlaced: datenow,
             orderDate: stringselectedDate + timesel,
             orderDescription: addresssel,
             orderEventMethod: eventstat
