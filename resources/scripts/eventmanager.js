@@ -116,7 +116,6 @@ fetch(delEventAPIURL, {
     console.log(response); 
     getEvents(); 
 }) 
-
 } 
 
 function pushEventItemss() 
