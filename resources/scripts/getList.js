@@ -124,6 +124,7 @@ function getCartItems()
 
 function pushCartItems()
 {
+    sessionStorage.setItem("cart", JSON.stringify(cart));
     getCartItems();
 
     const addCartItemsAPIURL = "https://ttcapi.herokuapp.com/api/cartTotals";

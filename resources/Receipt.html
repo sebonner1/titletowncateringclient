@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/Receipt.css">
 </head>
 <body>
+    <script src="scripts/getList.js"></script>
     <script src="scripts/receipt.js"></script>
     <table class="body-wrap">
         <tbody><tr>
@@ -32,7 +33,7 @@
                                                 <tr>
                                                     <td>
                                                         <table class="invoice-items" id="cart" cellpadding="0" cellspacing="0">
-                                                        <script>getCartItemsReceipt();</script>
+                                                        <script>getCartItemsReceipt(cart);</script>
                                                     </td>
                                                 </tr>
                                                 </tbody></table>
@@ -56,8 +57,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+   <!-- <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css"> -->
 <!--This is from this API: https://tutorialzine.com/2016/11/simple-credit-card-validation-form-->
     <div class="creditCardForm">
         <div class="heading">
@@ -118,8 +119,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="scripts/getList.js"></script>
+    <!-- <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="assets/js/script.js"></script> -->
+    <!-- <script src="scripts/getList.js"></script> -->
 </body>
 </html>

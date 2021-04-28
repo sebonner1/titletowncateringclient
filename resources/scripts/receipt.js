@@ -55,32 +55,49 @@
 
 console.log("javascript loaded");
 function getCartItemsReceipt(){
+    var cart = JSON.parse(sessionStorage.getItem("cart"));
     console.log("inside the getCartItems method");
     // front end or storage here
 
     const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
+    //const allCartAPIURL = "https://localhost:5000/api/cartAPI";
 
     var totalPrice = 0.0;
-    fetch(allCartAPIURL).then(function(response){
-        return response.json();
-    }).then(function(json){
-        let html = "<ul>";
-        json.forEach((item)=>{
-            html += "<tbody><tr>",
-            html += "<td>"+item.itemName+"</td>",
-            html += '<td class="alignright">'+'$'+item.price+"</td>",
-            totalPrice += (item.quantity * item.price),
-            html += "</tr>",
-            html += "</tbody></table>";
-        })
+    // fetch(allCartAPIURL).then(function(response){
+    //     return response.json();
+    // }).then(function(json){
+    //     let html = "<ul>";
+    //     json.forEach((item)=>{
+    //         html += "<tbody><tr>",
+    //         html += "<td>"+item.itemName+"</td>",
+    //         html += '<td class="alignright">'+'$'+item.price+"</td>",
+    //         totalPrice += (item.quantity * item.price),
+    //         html += "</tr>",
+    //         html += "</tbody></table>";
+    //     })
         
-        html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
-        html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
-        html += "</ul>";
-        document.getElementById("cart").innerHTML = html;
-    }).catch(function(error){
-        console.log(error);
-    })
+    //     html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
+    //     html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
+    //     html += "</ul>";
+    //     document.getElementById("cart").innerHTML = html;
+    // }).catch(function(error){
+    //     console.log(error);
+    // })
+    console.log("the cart", cart.toString());
+    let html = "<ul>";
+    cart.forEach((item)=>{
+                html += "<tbody><tr>",
+                html += "<td>"+item.quantity + " " + item.itemName+"</td>",
+                html += '<td class="alignright">'+'$'+(item.quantity * item.price)+"</td>",
+                totalPrice += (item.quantity * item.price),
+                html += "</tr>",
+                html += "</tbody></table>";
+            })
+            
+            html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
+            html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
+            html += "</ul>";
+            document.getElementById("cart").innerHTML = html;
 }
 
 var purchaseButton = document.getElementById("confirm-purchase");
