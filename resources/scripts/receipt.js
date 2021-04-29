@@ -109,8 +109,8 @@ function getCartItemsReceipt(){
             html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
             html += 'Suggested Tip (15%): $' +suggestedTip+ "",
             html += '<form> <label for = "Tip">Please enter your Tip</label><input type = "text" id = "tipy"></form>',
-            tipmid = document.getElementById("tipy").value,
-            tip += double.parse(tipmid),
+            //tipmid = document.getElementById("tipy").value,
+            //tip += double.parse(tipmid),
             totalPrice += (totalPricemid + tip),
             html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
             html += "</ul>";
