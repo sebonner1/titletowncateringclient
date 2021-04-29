@@ -97,8 +97,8 @@ function getCartItemsReceipt(){
                 html += "<td>"+item.quantity + " " + item.itemName+"</td>",
                 html += '<td class="alignright">'+'$'+(item.quantity * item.price)+"</td>",
                 priceBeforeTax += (item.quantity * item.price),
-                tax += round((priceBeforeTax*.1),2),
-                suggestedTip += round(((priceBeforeTax + tax) * .15),2),
+                tax += math.round((priceBeforeTax*.1),2),
+                suggestedTip += math.round(((priceBeforeTax + tax) * .15),2),
                 totalPricemid+= (tax+priceBeforeTax),
                 html += "</tr>",
                 html += "</tbody></table>";
