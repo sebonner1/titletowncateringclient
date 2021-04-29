@@ -52,7 +52,8 @@
 //         alert("Everything is correct");
 //     }
 // });
-
+var totalPrice = 0.0;
+var tip = 0.0;
 console.log("javascript loaded");
 function getCartItemsReceipt(){
     var cart = JSON.parse(sessionStorage.getItem("cart"));
@@ -62,11 +63,9 @@ function getCartItemsReceipt(){
     const allCartAPIURL = "https://ttcapi.herokuapp.com/api/cartAPI";
     //const allCartAPIURL = "https://localhost:5000/api/cartAPI";
 
-    var totalPrice = 0.0;
     var priceBeforeTax = 0.0;
     var tax = 0.0;
     var suggestedTip = 0.0;
-    var tip = 0.0;
     var totalPricemid = 0.0;
     var tipmid = "text";
     // fetch(allCartAPIURL).then(function(response){
@@ -99,7 +98,7 @@ function getCartItemsReceipt(){
                 priceBeforeTax += (item.quantity * item.price),
                 tax += Math.round((priceBeforeTax*.1),2),
                 suggestedTip += Math.round(((priceBeforeTax + tax) * .15),2),
-                totalPricemid+= (tax+priceBeforeTax),
+                totalPricemid = (tax+priceBeforeTax),
                 html += "</tr>",
                 html += "</tbody></table>";
             })
@@ -108,10 +107,13 @@ function getCartItemsReceipt(){
             html += 'Tax: $' +tax+ "</td></tr></tbody>",
             html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
             html += 'Suggested Tip (15%): $' +suggestedTip+ "",
-            html += '<form id="tipform"> <label for = "Tip">Please enter your Tip</label><input type = "text" id = "tipy"><input type ="submit" value = "Update Total"></form>',
+            html += '<form id="tipform" onsubmit = \"return false;\" method = \"post\">'; 
+            html += '<label for = "Tip">Please enter your Tip</label><input type = "text" id = \"tipy\">';
+            html += '<button onclick = "updateTotal()">Update Tip</button>';
+            //<input type ="submit" onsubmit = \"updateTotal()\" value = "Update Total"></form>',
             //tip += parseFloat(document.getElementById("tipy").value),
-            totalPrice += (totalPricemid + tip),
-            html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
+            totalPrice = (totalPricemid + tip);
+            html += '<div id = \"priceRow\"> Total Price: $'+totalPrice+"</td></tr></tbody></div>",
             html += "</ul>";
             document.getElementById("cart").innerHTML = html;
 }
@@ -121,4 +123,11 @@ function backToHomePage(){
     // purchaseButton.addEventListener('click', swapper, false);
     alert("You have completed your transaction.");
     window.location.href= "index.html";
+}
+function updateTotal(){
+    console.log("made it");
+    tip = parseFloat(document.getElementById("tipy").value);
+    totalPrice += (tip);
+    console.log(tip, totalPrice);
+    document.getElementById("priceRow").innerHTML = "Total Price: $"+totalPrice+"</td></tr></tbody>";
 }
