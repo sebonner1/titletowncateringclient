@@ -68,6 +68,7 @@ function getCartItemsReceipt(){
     var suggestedTip = 0.0;
     var tip = 0.0;
     var totalPricemid = 0.0;
+    var tipmid = "text";
     // fetch(allCartAPIURL).then(function(response){
     //     return response.json();
     // }).then(function(json){
@@ -108,7 +109,8 @@ function getCartItemsReceipt(){
             html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
             html += 'Suggested Tip (15%): $' +suggestedTip+ "",
             html += '<form> <label for = "Tip">Please enter your Tip</label><input type = "text" id = "tipy"></form>',
-            document.getElementById("tipy").value = tip,
+            tipmid = document.getElementById("tipy").value,
+            tip += double.parse(tipmid),
             totalPrice += (totalPricemid + tip),
             html += 'Total Price: $'+totalPrice+"</td></tr></tbody>",
             html += "</ul>";
