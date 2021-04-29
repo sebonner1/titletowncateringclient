@@ -118,12 +118,12 @@ function getCartItemsReceipt(){
             document.getElementById("cart").innerHTML = html;
 }
 
-var purchaseButton = document.getElementById("confirm-purchase");
-function backToHomePage(){
-    // purchaseButton.addEventListener('click', swapper, false);
-    alert("You have completed your transaction.");
-    window.location.href= "index.html";
-}
+// var purchaseButton = document.getElementById("confirm-purchase");
+// function backToHomePage(){
+//     // purchaseButton.addEventListener('click', swapper, false);
+//     alert("You have completed your transaction.");
+//     window.location.href= "HomePage.html";
+// }
 function updateTotal(){
     console.log("made it");
     tip = parseFloat(document.getElementById("tipy").value);
