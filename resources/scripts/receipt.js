@@ -101,8 +101,8 @@ function getCartItemsReceipt(){
 }
 
 var purchaseButton = document.getElementById("confirm-purchase");
-if(purchaseButton){
-    purchaseButton.addEventListener('click', swapper, false);
+function backToHomePage(){
+    // purchaseButton.addEventListener('click', swapper, false);
     alert("You have completed your transaction.");
     window.location.href= "index.html";
 }
