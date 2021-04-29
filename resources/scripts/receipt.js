@@ -89,8 +89,8 @@ function getCartItemsReceipt(){
                 html += "<tbody><tr>",
                 html += "<td>"+item.quantity + " " + item.itemName+"</td>",
                 html += '<td class="alignright">'+'$'+(item.quantity * item.price)+"</td>",
-                totalPrice += (item.quantity * item.price),
-                //tax += (priceBeforeTax*.1),
+                priceBeforeTax += (item.quantity * item.price),
+                tax += (priceBeforeTax*.1),
                 //suggestedTip += ((priceBeforeTax + tax) * .15),
                 //totalPricemid+= (tax+priceBeforeTax),
                 html += "</tr>",
@@ -98,7 +98,7 @@ function getCartItemsReceipt(){
             })
             
             html += '<tbody><tr><td style="text-align:right; font-weight: bold;">',
-            //html += 'Tax: $' +tax+ "",
+            html += 'Tax: $' +tax+ "",
            // html += 'Suggested Tip (15%): $' +suggestedTip+ "",
             //html += '<form> <label for = "Tip">Please enter your Tip</label>input type = "text" id = "tip"</form>',
             //html += totalPrice = (totalPricemid + tip)
