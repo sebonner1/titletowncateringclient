@@ -135,10 +135,12 @@ function pushEventItemss()
     var stringselectedDate;
     var datenow = Date.now().toString();
     
-    document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
-        selecteddate = e.target.value;
-        stringselectedDate = selecteddate.toString();
-        });
+    // document.querySelector('jsuites-calendar').addEventListener('onchange', function(e) { 
+    //     selecteddate = e.target.value;
+    //     stringselectedDate = selecteddate.toString();
+    //     });
+    stringselectedDate = document.getElementById("selectedDate").value.toString();
+    console.log("just got the date from the page : ", stringselectedDate);
     fetch(addPostsAPIURL, {
         method: "POST",
         headers: {
@@ -154,7 +156,7 @@ function pushEventItemss()
     }).then((response)=>{ //error on the reponse like here as well?
         console.log(response);
         console.log("she's a runner, she's a trackstar");
-        //window.location.href= "Receipt.html";
+        window.location.href= "Receipt.html";
         //getEvents(); //error when calling getEvents
     })
 } 
