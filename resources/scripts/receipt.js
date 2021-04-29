@@ -63,6 +63,10 @@ function getCartItemsReceipt(){
     //const allCartAPIURL = "https://localhost:5000/api/cartAPI";
 
     var totalPrice = 0.0;
+    var priceBeforeTax = 0.0;
+    var tax = 0.0;
+    var suggestedTip = 0.0;
+    var tip = 0.0;
     // fetch(allCartAPIURL).then(function(response){
     //     return response.json();
     // }).then(function(json){
@@ -83,6 +87,7 @@ function getCartItemsReceipt(){
     // }).catch(function(error){
     //     console.log(error);
     // })
+    
     console.log("the cart", cart.toString());
     let html = "<ul>";
     cart.forEach((item)=>{
