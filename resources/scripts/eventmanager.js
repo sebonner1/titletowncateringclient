@@ -39,7 +39,12 @@ function getEvents(){
             html += "&nbsp",
             html += "&nbsp",
             html += CateringEvent.orderDescription,
-            html += "<button onclick=\"delEvent("+CateringEvent.orderID+")\">delete</button>" + "</li>" 
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "&nbsp",
+            html += "<button onclick=\"delEvent("+CateringEvent.orderID+")\" id=\"deletebutton\" style=\" background-color: black; color: white; padding: 14px 20px; border: black; cursor: pointer; width: 10%; text-align: center; right: 15px;\">Delete</button>" + "</li>" 
         })
         html += "</ul>";
         document.getElementById("cateringevents").innerHTML = html;
